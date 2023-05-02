@@ -6,30 +6,26 @@ class Screen5 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(title: Text("Api"),),
-      body: FutureBuilder(
-        future: ApiServices.getData(),
-        builder: (ctx,snapshoot){
-          if(snapshoot.hasData){
-            return ListView.builder(itemBuilder: (ctx,index){
-              final post=snapshoot.data![index];
-              return ListTile(
-                title: Text(post.title),
-                subtitle: Text(post.id.toString()),
-
-              );
-            });
-          }else if (snapshoot.hasError){
-            return Center(
-              child: Text('${snapshoot.error}'),
-            );
-          }else{
-           return CircularProgressIndicator();
-          }
-
-        },
-      ),
+        body: FutureBuilder(
+          future: ApiServices.getData(),
+          builder: (_,snapshoot){
+            if(snapshoot.hasData){
+              return ListView.builder(itemBuilder:(ctx,index){
+                final posts = snapshoot.data![index];
+                return ListTile(
+                  title: Text(posts.body),
+                  subtitle: Text(posts.id.toString()),
+                );
+              });
+            }else if(snapshoot.hasError){
+              print("Error in snaphoot");
+            }
+            return CircularProgressIndicator();
+          },
+        ),
     );
   }
 }

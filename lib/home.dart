@@ -33,6 +33,11 @@ class Home extends StatelessWidget {
             ElevatedButton(onPressed: (){
               Navigator.pushNamed(context, "/screen5");
             }, child: Text("Navigate Api")),
+            SizedBox(height: 25,),
+            ElevatedButton(onPressed: (){
+              Navigator.pushNamed(context, "/screen6");
+            }, child: Text("Navigate animation2")),
+
           ],
         ),
       ),

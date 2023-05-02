@@ -8,6 +8,8 @@ import 'package:revision/provider/screen3.dart';
 import 'package:revision/provider/viewmodel.dart';
 
 import 'animations/screen4.dart';
+import 'animations/screen6.dart';
+
 import 'api/screen5.dart';
 import 'autoCompelete/screen2.dart';
 
@@ -34,6 +36,8 @@ class MyApp extends StatelessWidget{
          "/screen3":(_)=>Screen3(),
          "/screen4":(_)=>Screen4(),
          "/screen5":(_)=>Screen5(),
+         "/screen6":(_)=>Screen6(),
+
        },
      ),
    );
